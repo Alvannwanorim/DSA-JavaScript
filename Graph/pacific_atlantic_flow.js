@@ -8,16 +8,11 @@ function PacificAtlanticFlow(grid) {
 		dfs(grid[r][0], r, 0, visistedPac);
 		dfs(grid[r][col - 1], r, col - 1, visistedPac);
 	}
-	console.log(visistedPac);
-
-	console.log('next');
 	for (let c = 0; c < grid[0].length; c++) {
 		let row = grid.length;
 		dfs(grid[0][c], 0, c, visistedAtl);
 		dfs(grid[row - 1][c], row - 1, c, visistedAtl);
 	}
-	console.log(visistedAtl);
-	console.log('final');
 	for (let r = 0; r < grid.length; r++) {
 		for (let c = 0; c < grid[0].length; c++) {
 			let pos = r + ',' + c;
