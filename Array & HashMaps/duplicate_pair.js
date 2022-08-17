@@ -1,4 +1,5 @@
 function duplicatePair(nums) {
+	if (nums.length === 0) return false;
 	const hashMap = {};
 	for (const num of nums) {
 		if (num in hashMap) return true;
