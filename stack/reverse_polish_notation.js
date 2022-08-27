@@ -21,4 +21,4 @@ function reversePolishNotation(tokens) {
 	return stack[0];
 }
 
-console.log(reversePolishNotation([ 2, 3, '+', 4, '*' ]));
+console.log(reversePolishNotation([ 2, 3, '+', 4, '*', 21, '/' ]));
