@@ -18,9 +18,23 @@ class LinkedList {
 		} else {
 			const oldtail = this.tail;
 			this.tail = node;
-			node.next = this.tail;
+			oldtail.next = this.tail;
 		}
 		this.size += 1;
+		return this;
+	}
+	reverse() {
+		const node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+		let next;
+		let prev = null;
+		for (let i = 0; i < this.size.length; i++) {
+			next = node.next;
+			node.next = prev;
+			prev = node;
+			node = node.next;
+		}
 		return this;
 	}
 }
@@ -29,4 +43,4 @@ let sll = new LinkedList();
 sll.push(1);
 sll.push(2);
 sll.push(3);
-console.log(sll);
+console.log(sll.reverse());
