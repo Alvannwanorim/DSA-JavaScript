@@ -6,7 +6,6 @@ class Node {
 }
 
 function reorder(list) {
-	console.log(head);
 	let slow = head;
 	let fast = head.next;
 	while (fast && fast.next) {
@@ -24,9 +23,6 @@ function reorder(list) {
 		prev = second;
 		second = temp;
 	}
-	console.log(second);
-
-	console.log(second);
 	let first = list.head;
 	second = prev;
 	while (second) {
