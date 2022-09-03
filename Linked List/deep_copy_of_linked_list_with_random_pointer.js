@@ -7,23 +7,19 @@ class Node {
 }
 
 function deepCopy(node) {
-	let oldListMap = { null: null };
+	let oldListMap = new Map();
 	let curr = node;
 	while (curr) {
-		let copy = new Node(curr.value);
-		oldListMap[curr] = copy;
+		oldListMap.set(curr, new Node(curr.value, null, null));
 		curr = curr.next;
 	}
-	// console.log(oldListMap);
+
 	curr = node;
-	while (curr) {
-		copy = oldListMap[curr];
-		copy.next = oldListMap[curr.next];
-		copy.random = oldListMap[curr.random];
-		curr = curr.next;
-		console.log(copy);
+	for (const [ oldCurr, newCurr ] of oldListMap) {
+		newCurr.next = oldCurr.next && oldListMap.get(oldCurr.next);
+		newCurr.random = oldCurr.random && oldListMap.get(oldCurr.random);
 	}
-	return oldListMap[node];
+	return oldListMap.get(node);
 }
 
 let node1 = new Node(5);
