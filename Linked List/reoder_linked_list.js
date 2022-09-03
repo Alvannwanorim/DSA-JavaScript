@@ -4,33 +4,15 @@ class Node {
 		this.next = null;
 	}
 }
-class LinkedList {
-	constructor() {
-		this.head = null;
-		this.tail = null;
-		this.size = 0;
-	}
-	push(val) {
-		const node = new Node(val);
-		if (this.size === 0) {
-			this.head = node;
-			this.tail = node;
-		} else {
-			const oldTail = this.tail;
-			this.tail = node;
-			oldTail.next = this.tail;
-		}
-		this.size += 1;
-		return this;
-	}
-}
 
-function reorder(head) {
+function reorder(list) {
+	console.log(head);
 	let slow = head;
 	let fast = head.next;
 	while (fast && fast.next) {
 		slow = slow.next;
 		fast = fast.next.next;
+		// console.log(slow, 'Ad', fast);
 	}
 
 	let second = slow.next;
@@ -42,8 +24,10 @@ function reorder(head) {
 		prev = second;
 		second = temp;
 	}
+	console.log(second);
 
-	let first = head;
+	console.log(second);
+	let first = list.head;
 	second = prev;
 	while (second) {
 		let temp1 = first.next;
@@ -55,12 +39,11 @@ function reorder(head) {
 	}
 	return first;
 }
-let sll = new LinkedList();
-sll.push(1);
-sll.push(2);
-sll.push(3);
-sll.push(4);
-sll.push(5);
-sll.push(6);
 
-console.log(reorder(sll));
+let node1 = new Node(5);
+let node2 = new Node(4, node1);
+let node3 = new Node(3, node2);
+let node4 = new Node(2, node3);
+let node5 = new Node(1, node4);
+
+console.log(reorder(node5));
