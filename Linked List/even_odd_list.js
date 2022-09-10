@@ -10,9 +10,16 @@ function evenAndOddList(node) {
 		return null;
 	}
 
-	odd = node;
-	even = odd.next;
-	hEven = even;
+	let odd = node;
+	let even = odd.next;
+	let hEven = even;
 
-	while (even && even.next) {}
+	while (even && even.next) {
+		odd.next = even.next;
+		odd = even.next;
+		even.next = odd.next;
+		even = even.next;
+	}
+	odd.next = hEven;
+	return node;
 }
