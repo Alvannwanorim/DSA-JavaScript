@@ -1,4 +1,4 @@
-function longestSubSring(s) {
+function longestSubString(s) {
 	let l = 0;
 	let max = 0;
 	let result = new Set();
@@ -13,4 +13,4 @@ function longestSubSring(s) {
 	return max;
 }
 
-console.log(longestSubSring('abacabcabcd'));
+console.log(longestSubString('abacabcabcd'));
