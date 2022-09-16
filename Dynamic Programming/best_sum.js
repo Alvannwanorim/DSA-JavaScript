@@ -18,9 +18,13 @@ function bestSum(target, numbers) {
 		const remainder = bestSum(diff, numbers);
 		if (remainder !== null) {
 			const combination = [ ...remainder, number ];
-			if ((shortestCombination === null || shortestCombination, length > combination.length)) {
+			if (shortestCombination === null || shortestCombination.length > combination.length) {
 				shortestCombination = combination;
 			}
 		}
 	}
+
+	return shortestCombination;
 }
+
+console.log(bestSum(7, [ 5, 3, 4 ]));
