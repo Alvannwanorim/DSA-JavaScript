@@ -27,6 +27,7 @@ function bestSum(target, numbers, memo = {}) {
 		}
 	}
 	memo[target] = shortestCombination;
+
 	return shortestCombination;
 }
 
