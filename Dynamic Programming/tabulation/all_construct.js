@@ -16,5 +16,5 @@ function allConstruct(target, wordBank) {
 }
 
 console.log(allConstruct('abcdef', [ 'ab', 'abc', 'cd', 'def', 'abcd', 'ef', 'c' ]));
-// console.log(allConstruct('skateboard', [ 'bo', 'rd', 'ate', 't', 'ska', 'sk', 'boa' ]));
-// console.log(allConstruct('eeeeeeeeeeeeee', [ 'e', 'ee', 'eee', 'eeee', 'eeeee', 'eeeeee', 'eeeeeee' ]));
+console.log(allConstruct('skateboard', [ 'bo', 'rd', 'ate', 't', 'ska', 'sk', 'boa' ]));
+console.log(allConstruct('eeeeeeeeeeeeee', [ 'e', 'ee', 'eee', 'eeee', 'eeeee', 'eeeeee', 'eeeeeee' ]));
