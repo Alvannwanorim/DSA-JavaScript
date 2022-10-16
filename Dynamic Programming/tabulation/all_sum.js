@@ -1,5 +1,6 @@
 function allSum(target, numbers) {
 	const table = Array(target + 1).fill().map(() => []);
+	c;
 	table[0] = [ [] ];
 	for (let i = 0; i <= target; i++) {
 		for (let num of numbers) {
