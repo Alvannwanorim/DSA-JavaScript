@@ -1,12 +1,10 @@
 function allConstruct(target, wordBank) {
 	const table = Array(target.length + 1).fill().map(() => []);
 	table[0] = [ [] ];
-
 	for (let i = 0; i < target.length; i++) {
 		for (let word of wordBank) {
 			if (target.slice(i, i + word.length) === word) {
 				const newCombo = table[i].map((sub) => [ ...sub, word ]);
-				// console.log(newCombo);
 				table[i + word.length].push(...newCombo);
 			}
 		}
